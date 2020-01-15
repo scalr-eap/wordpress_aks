@@ -5,7 +5,7 @@ resource "azurerm_mysql_server" "default" {
 
   sku {
     name     = var.mysql_sku_name
-    capacity = var.capacity
+    capacity = var.mysql_capacity
     tier     = "Basic"
     family   = "Gen5"
   }
@@ -17,7 +17,7 @@ resource "azurerm_mysql_server" "default" {
   }
 
   administrator_login          = var.mysql_username
-  administrator_login_password = var.mysql_pass
+  administrator_login_password = var.mysql_password
   version                      = "5.7"
   ssl_enforcement              = "Enabled"
 }
